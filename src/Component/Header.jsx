@@ -5,6 +5,7 @@ display: flex;
 justify-content: space-between;
 height: 80px;
 align-items: center;
+border-bottom: 1px solid #2d323c;
 
 .daily-dev-logo {
     width: 200px
@@ -15,16 +16,21 @@ align-items: center;
 }
 
 .user {
+    display: flex;
     align-items: center;
+    --size: 45px;
+
     .points {
-        width: 60px;
-        height: 60px;
+        width: var(--size);
+        height: var(--size);
         color: white;
+        background-color: #1d1f25
+        
     }
 
     &_img{
-        width: 60px
-        height: 60px;
+        width:var(--size);
+        height: var(--size);
     }
 
     img{
