@@ -3,12 +3,13 @@ import styled from 'styled-components'
 const StyledHeader = styled.div`
 display: flex;
 justify-content: space-between;
-height: 80px;
+height: 60px;
 align-items: center;
 border-bottom: 1px solid #2d323c;
+padding: 0 20px;
 
 .daily-dev-logo {
-    width: 200px
+    width: 130px
 
     img {
         width: 100%;
@@ -19,18 +20,25 @@ border-bottom: 1px solid #2d323c;
     display: flex;
     align-items: center;
     --size: 45px;
+    --radius: 10px;
 
     .points {
         width: var(--size);
         height: var(--size);
         color: white;
         background-color: #1d1f25
+        border-top-left-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+        font-weight: bold;
+        font-size:18px;
         
     }
 
     &_img{
         width:var(--size);
         height: var(--size);
+        border-radius: var(--radius);
+        overflow: hidden;
     }
 
     img{
