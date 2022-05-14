@@ -6,6 +6,9 @@ import Fire from './Icons/Fire'
 import Arrow from './Icons/Arrow'
 import Comment from './Icons/Comment'
 import Search from './Icons/Search'
+import Bookmark from './Icons/Bookmark'
+import Eye from './Icons/Eye'
+import Settings from './Icons/Settings'
 
 const Aside = styled.aside `
 padding-top: 40px;
@@ -16,9 +19,11 @@ height: calc(100vh - var(--header-size));
     align-items: center;
     padding: 5px 15px;
     text-decoration: none;
+    color: #a7b2ce;
 
     &:hover, &.active {
         background: #2d323c;
+        color: #fff;
     }
 
     &_label{
@@ -37,7 +42,8 @@ height: calc(100vh - var(--header-size));
 .section {
     margin-top: 5px; 
     &_title {
-        font-size: 14px;
+        padding-left: 15px;
+        font-size: 12px;
         font-weight: bold;
         color: #70788d;
     }
@@ -67,6 +73,21 @@ const discoverLinks = [
     }
 ]
 
+const manageLinks = [
+    {
+        icon: Bookmark,
+        label: 'Bookmarks'
+    },
+    {
+        icon: Eye,
+        label: 'Reading History',
+    },
+    {
+        icon: Settings,
+        label: 'Customize',
+    }
+]
+
 export default function Sidebar () {
     return (
         <Aside>
@@ -93,6 +114,13 @@ export default function Sidebar () {
                                 </span>
                             </Link>
                         ))}
+                    </ul>
+                </div>
+
+                <div className="section">
+                    <span className="section_title">Manage</span>
+                    <ul>
+
                     </ul>
                 </div>
             </nav>
