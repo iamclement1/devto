@@ -1,5 +1,5 @@
 export default function Fire({
-    size = 18,
+    size = 12,
     color = 'black'
 }) {
     return ( 

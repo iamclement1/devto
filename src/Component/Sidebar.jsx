@@ -13,12 +13,14 @@ import Files from './Icons/Files'
 import Terminal from './Icons/Terminal'
 import Feedback from './Icons/Feedback'
 import Invite from './Icons/Invite'
+import Stack from './Icons/Stack'
 
 const Aside = styled.aside `
 padding-top: 20px;
 width: 230px;
 border-right: 2px solid #2d323c;
 height: calc(100vh - var(--header-size));
+
 .link{
     align-items: center;
     padding: 3px 12px;
@@ -48,7 +50,7 @@ nav {
     flex-direction: column;
     height: 100%
 
-    .secton .footer {
+    .footer {
         margin-top: auto !important;
     }
 }
@@ -63,6 +65,38 @@ nav {
     }
     ul { 
         margin-top: 15px;
+    }
+}
+
+.status {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 15px
+    display: flex;
+    align-items: center;
+    margin: 25px 15px 15px 10px;
+
+    &_icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        border: 1px solid #fff;
+    }
+
+    &_text {
+        &_title {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        &_next {
+            font-size: 12px;
+            color: #70788d;
+            display: block;
+            margin-top: 3px;
+
+        }
     }
 }
 
@@ -164,17 +198,32 @@ export default function Sidebar () {
                     </ul>
                 </div>
 
-                <div className="secton footer">
-                    <ul>
-                        {footerLinks.map((link) => (
-                            <Link key={link.label} to='' className="flex link">
-                                <link.icon color="#fff" size={12}/>
-                                <span className="link_label">
-                                    {link.label}
-                                </span>
-                            </Link>
-                        ))}
-                    </ul>
+                <div className="footer">
+                    <div className="secton">
+                        <ul>
+                            {footerLinks.map((link) => (
+                                <Link key={link.label} to='' className="flex link">
+                                    <link.icon color="#fff" size={12}/>
+                                        <span className="link_label">
+                                            {link.label}
+                                        </span>
+                                </Link>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="status">
+                        <div className="status_icon center">
+                            <Stack color='#70788d' />
+                        </div>
+                        <div className="status_text">
+                            <span className="status_text_title">
+                                Silver
+                            </span>
+                            <span className="status_text_next">
+                                Next level: Gold
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </Aside>

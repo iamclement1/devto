@@ -6,7 +6,7 @@ const Container = styled.div`
 background-color : var(--main-color);
 width: 100%;
 min-height : 100vh;
---header-size: 60px;
+--header-size: 30px;
 `
 
 export default function Layout () {
