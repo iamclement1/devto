@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Filter from './Icons/Filter'
 import Home from './Icons/Home'
+import Fire from './Icons/Fire'
+import Arrow from './Icons/Arrow'
+import Comment from './Icons/Comment'
+import Search from './Icons/Search'
 
 const Aside = styled.aside `
 padding-top: 40px;
@@ -10,9 +14,12 @@ border-right: 2px solid #2d323c;
 height: calc(100vh - var(--header-size));
 .link{
     align-items: center;
-    background: #2d323c;
-    padding: 5px 10px;
+    padding: 5px 15px;
     text-decoration: none;
+
+    &:hover, &.active {
+        background: #2d323c;
+    }
 
     &_label{
         margin-left: 12px;
@@ -27,7 +34,38 @@ height: calc(100vh - var(--header-size));
     }
 }
 
+.section {
+    margin-top: 5px; 
+    &_title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #70788d;
+    }
+    ul { 
+        margin-top: 15px;
+    }
+}
+
 `
+
+const discoverLinks = [
+    {
+        icon: Fire,
+        label: 'Popular'
+    },
+    {
+        icon: Arrow,
+        label: 'Most Voted'
+    },
+    {
+        icon: Comment,
+        label: 'Best Discussion'
+    },
+    {
+        icon: Search,
+        label: 'Search'
+    }
+]
 
 export default function Sidebar () {
     return (
@@ -44,6 +82,19 @@ export default function Sidebar () {
                         size={14} />
                     </button>
                 </Link>
+                <div className="section">
+                    <span className='section_title'>Discover</span>
+                    <ul>
+                        {discoverLinks.map((link) => (
+                            <Link key={link.label} to='' className="flex link">
+                                <link.icon color="#fff" size={18} />
+                                <span className="link_label">
+                                    {link.label}
+                                </span>
+                            </Link>
+                        ))}
+                    </ul>
+                </div>
             </nav>
         </Aside>
     )
