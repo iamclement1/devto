@@ -13,7 +13,7 @@ import Files from './Icons/Files'
 import Terminal from './Icons/Terminal'
 import Feedback from './Icons/Feedback'
 import Invite from './Icons/Invite'
-import Stack from './Icons/Stack'
+// import Stack from './Icons/Stack'
 
 const Aside = styled.aside `
 padding-top: 20px;
@@ -211,7 +211,7 @@ export default function Sidebar () {
                             ))}
                         </ul>
                     </div>
-                    <div className="status">
+                    {/* <div className="status">
                         <div className="status_icon center">
                             <Stack color='#70788d' />
                         </div>
@@ -223,7 +223,7 @@ export default function Sidebar () {
                                 Next level: Gold
                             </span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </Aside>
