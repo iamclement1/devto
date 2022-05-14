@@ -43,6 +43,16 @@ height: calc(100vh - var(--header-size));
     }
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+
+    .secton .footer {
+        margin-top: auto !important;
+    }
+}
+
 .section {
     margin-top: 5px; 
     &_title {
@@ -154,7 +164,7 @@ export default function Sidebar () {
                     </ul>
                 </div>
 
-                <div className="secton">
+                <div className="secton footer">
                     <ul>
                         {footerLinks.map((link) => (
                             <Link key={link.label} to='' className="flex link">
