@@ -9,15 +9,19 @@ import Search from './Icons/Search'
 import Bookmark from './Icons/Bookmark'
 import Eye from './Icons/Eye'
 import Settings from './Icons/Settings'
+import Files from './Icons/Files'
+import Terminal from './Icons/Terminal'
+import Feedback from './Icons/Feedback'
+import Invite from './Icons/Invite'
 
 const Aside = styled.aside `
-padding-top: 40px;
-width: 200px;
+padding-top: 20px;
+width: 230px;
 border-right: 2px solid #2d323c;
 height: calc(100vh - var(--header-size));
 .link{
     align-items: center;
-    padding: 5px 15px;
+    padding: 3px 12px;
     text-decoration: none;
     color: #a7b2ce;
 
@@ -88,13 +92,32 @@ const manageLinks = [
     }
 ]
 
+const footerLinks = [
+    {
+        icon: Files,
+        label: 'Docs',
+    },
+    {
+        icon: Terminal,
+        label: 'Change Log'
+    }, 
+    {
+        icon: Feedback,
+        label: 'Feedback',
+    },
+    {
+        icon: Invite,
+        label: 'Invite People'
+    }
+]
+
 export default function Sidebar () {
     return (
         <Aside>
             <nav>
                 <Link to=''
                 className="link flex">
-                    <Home color="#fff" size={25} />
+                    <Home color="#fff" size={20} />
                     <span className="link_label">
                         My Feed
                     </span>
@@ -108,7 +131,7 @@ export default function Sidebar () {
                     <ul>
                         {discoverLinks.map((link) => (
                             <Link key={link.label} to='' className="flex link">
-                                <link.icon color="#fff" size={18} />
+                                <link.icon color="#fff" size={12} />
                                 <span className="link_label">
                                     {link.label}
                                 </span>
@@ -120,7 +143,27 @@ export default function Sidebar () {
                 <div className="section">
                     <span className="section_title">Manage</span>
                     <ul>
+                        {manageLinks.map((link) => (
+                            <Link key={link.label} to='' className="flex link">
+                                <link.icon color="#fff" size={12} />
+                                <span className="link_label">
+                                    {link.label}
+                                </span>
+                            </Link>
+                        ))}
+                    </ul>
+                </div>
 
+                <div className="secton">
+                    <ul>
+                        {footerLinks.map((link) => (
+                            <Link key={link.label} to='' className="flex link">
+                                <link.icon color="#fff" size={12}/>
+                                <span className="link_label">
+                                    {link.label}
+                                </span>
+                            </Link>
+                        ))}
                     </ul>
                 </div>
             </nav>
