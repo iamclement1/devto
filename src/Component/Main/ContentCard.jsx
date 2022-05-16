@@ -6,9 +6,9 @@ import Bookmark from '../Icons/Bookmark';
 const Card = styled.article`
 border: 1px solid #2d323c;
 border-radius: 10px;
-height: 300px;
+height: 360px;
 width: 100%;
-padding: 10px 7px;
+padding: 12px 7px;
 
 .card {
     &_title{
@@ -16,6 +16,7 @@ padding: 10px 7px;
         padding: 0 10px;
         color: #fff;
         font-size: 20px;
+        line-height: 1
     }
     &_image {
         height: 140px;

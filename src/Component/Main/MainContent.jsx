@@ -36,10 +36,10 @@ export default function MainContent () {
                             <ContentCard
                             key={d.name}
                             image={d.image}
-                            logo={ d.logo}
-                            title={d.title}
+                            logo={d.logo}
+                            title={d.name}
                             reactions={d.reactions}
-                            date = {d.date}
+                            date={d.date}
                             readTime={d.readTime}
                             sponsored={d.sponsored} />
                         )
