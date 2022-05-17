@@ -16,10 +16,12 @@ import Invite from './Icons/Invite'
 import Stack from './Icons/Stack'
 
 const Aside = styled.aside `
-padding-top: 20px;
-width: 230px;
+padding-top: 40px;
+width: 250px;
 border-right: 2px solid #2d323c;
 height: calc(100vh - var(--header-size));
+position: sticky;
+top: var(--header-size);
 
 
 .link{
@@ -49,15 +51,15 @@ height: calc(100vh - var(--header-size));
 nav {
     display: flex;
     flex-direction: column;
-    height: 100%
+    height: 100%;
 
     .footer {
-        margin-top: auto !important;
+        margin-top: auto;
     }
 }
 
 .section {
-    margin-top: 5px; 
+    margin-top: 10px; 
     &_title {
         padding-left: 15px;
         font-size: 12px;
