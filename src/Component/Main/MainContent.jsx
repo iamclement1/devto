@@ -38,7 +38,7 @@ export default function MainContent () {
                             image={d.image}
                             logo={d.logo}
                             title={d.name}
-                            reactions={d.reactions}
+                            reactions={d.reactions} 
                             date={d.date}
                             readTime={d.readTime}
                             sponsored={d.sponsored} />

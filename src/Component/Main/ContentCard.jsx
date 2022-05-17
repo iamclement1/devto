@@ -6,18 +6,48 @@ import Bookmark from '../Icons/Bookmark';
 const Card = styled.article`
 border: 1px solid #2d323c;
 border-radius: 10px;
-height: 360px;
+height: 380px;
 width: 100%;
 padding: 12px 7px;
+background: #1d1f25;
 
 .card {
     &_title{
-        height: 120px;
-        padding: 0 10px;
+        height: 170px;
+        padding: 0 15px;
         color: #fff;
-        font-size: 20px;
-        line-height: 1
+        font-size: 14px;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+
+        &_logo {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+    
+            img {
+                margin-top: 5px; 
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+        }
+
+        &_date {
+            color: #a1abc6;
+            font-size: 13px;
+            margin-top: auto;
+
+        }
     }
+
+    
+
     &_image {
         height: 140px;
 
@@ -28,12 +58,42 @@ padding: 12px 7px;
         }
     }
     &_reactions, &_sponsor {
-        height: 30px;
+        height: 70px;
+
+    }
+    &_reactions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: #a8b3cf;
+
+        &_reaction {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+
+            .reaction-count {
+                margin-left: 10px;
+            }
+        }
+        
     }
 }
 `
 
 const SponsoredCard = styled(Card)`
+
+.card {
+    &_sponsor {
+        color: #757d92;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        font-size: 14px;
+
+    }
+}
 `
 
 export default function ContentCard({
@@ -83,7 +143,7 @@ export default function ContentCard({
     return (
         <Card>
             <div className="card_title">
-                <div className="card-">
+                <div className="card_title_logo">
                     <img src= {logo} alt="" />
                 </div>
                 <span>
@@ -103,9 +163,9 @@ export default function ContentCard({
             </div>
             <div className="card_reactions">
                 { reactionList.map( reaction => (
-                    <div>
-                        <reaction.Icon />
-                        <span>
+                    <div className="card_reactions_reaction" key={ reaction.Icon}>
+                        <reaction.Icon color="#a8b3cf" size={20} />
+                        <span className="reaction-count">
                             {reaction.label}
                         </span>
                     </div>

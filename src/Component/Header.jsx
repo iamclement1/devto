@@ -2,11 +2,18 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.div`
 display: flex;
+background-color: inherit;
 justify-content: space-between;
 height: var(--header-size);
 align-items: center;
 border-bottom: 1px solid #2d323c;
 padding: 0 20px;
+position: fixed;
+top: 0;
+width: 100%;
+height: 10%;
+z-index: 2000;
+padding-top: 12px;
 
 .daily-dev-logo {
     width: 130px
